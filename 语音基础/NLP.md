@@ -31,7 +31,7 @@
 
 - 实际上，其实我们这篇文章，虽然 100W 字，但是其实我们整合起来，有99W字是重复的，只有1W字是完全不重复的。那我们用100W X 10W的岂不是白白浪费了99W X 10W的矩阵存储空间。
 
-	
+	<br>
 
 ## embedding
 
@@ -41,7 +41,7 @@
 
 **embedding**通过矩阵乘法的方式，对稀疏矩阵进行降维，假如我们有一个 100W X10W 的矩阵，用它乘上一个10W X 20的矩阵，我们可以把它降到100W X 20，瞬间量级降10W/20=5000倍
 
-
+<br>
 
 **2. 升维**
 
@@ -53,7 +53,7 @@
 
 因此，理论上，只要层数深，只要参数足够，NN能拟合任何特征。总之，它类似于虚拟出一个关系对当前数据进行映射。
 
-
+<br>
 
 **3. 关联性（密集态）**
 
@@ -77,15 +77,13 @@
 
 我们把文字的one-hot编码，从稀疏态变成了密集态，并且让相互独立向量变成了有内在联系的关系向量。
 
-
+<br>
 
 **总结：**
 
 - 它把我们的稀疏矩阵，通过一些线性变换（在CNN中用全连接层进行转换，也称为查表操作），变成了一个密集矩阵，这个密集矩阵用了N（例子中N=3）个特征来表征所有的文字，在这个密集矩阵中，表象上代表着密集矩阵跟单个字的一一对应关系，实际上还蕴含了大量的字与字之间，词与词之间甚至句子与句子之间的内在关系（如：我们得出的王妃跟公主的关系）。他们之间的关系，用的是嵌入层`embedding`学习来的参数进行表征。**从稀疏矩阵到密集矩阵的过程，叫做embedding**，很多人也把它叫做查表，因为他们之间也是一个一一映射的关系。
 
 <br>
-
-
 
 ---
 
@@ -158,7 +156,7 @@ emb1																			# emb1.shape = (2, 4, 3)
 
 
 
-
+<br><br>
 
 ---
 
@@ -188,7 +186,7 @@ W是什么？**循环神经网络**的**隐藏层**的值s不仅仅取决于当�
 
 这个网络在t时刻接收到输入$x_t$ 之后，隐藏层的值是$s_t$  ，输出值是$o_t$  。关键一点是， $s_t$ 的值不仅仅取决于$x_t$  ，还取决于 $x_t - 1$  。我们可以用下面的公式来表示**循环神经网络**的计算方法：
 
-<img src="https://pic4.zhimg.com/v2-9524a28210c98ed130644eb3c3002087_r.jpg" alt="img" style="zoom:50%;" />
+<img src="https://pic4.zhimg.com/v2-9524a28210c98ed130644eb3c3002087_r.jpg" alt="img" style="zoom: 33%;" />
 
 
 
@@ -204,6 +202,8 @@ W是什么？**循环神经网络**的**隐藏层**的值s不仅仅取决于当�
 
 序列形的数据就不太好用原始的神经网络处理，为了建模序列问题，RNN引入了**隐状态h（即上文中的S）（hidden state）**的概念，**隐状态h可以对序列形的数据提取特征，接着再转换为输出**。
 
+<br>
+
 1. 先从$h_1$的计算开始看：
 
 - 圆圈或方块表示的是向量。
@@ -212,7 +212,7 @@ W是什么？**循环神经网络**的**隐藏层**的值s不仅仅取决于当�
 
 <img src="https://img-blog.csdnimg.cn/img_convert/f22cb1de22144ad6806b83acb3fb45a4.png" alt="img" style="zoom: 80%;" />
 
-
+<br>
 
 2. 后续$h_2$的计算和$h_1$类似,但有以下注意事项:
 
@@ -222,23 +222,23 @@ W是什么？**循环神经网络**的**隐藏层**的值s不仅仅取决于当�
 
 <img src="https://img-blog.csdnimg.cn/img_convert/373128bfcb80a93d064f2eab01448f3c.png" alt="img" style="zoom: 67%;" />
 
-
+<br>
 
 3. 得到输出值的方法就是直接通过h进行计算：
 
 <img src="https://img-blog.csdnimg.cn/img_convert/830d146d7e3e626b975a18ea59efc43a.png" alt="img" style="zoom: 67%;" />
 
-
+<br>
 
 4. 剩下的输出类似进行：
 
 - 这就是最经典的RNN结构，是x1, x2, .....xn，输出为y1, y2, ...yn，也就是说，输入和输出序列必须要是等长的。
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\f6cdd1b5ff8c6ca0cad2f6afcea8f635.png" alt="img" style="zoom: 67%;" />
+<img src=".\NLP\f6cdd1b5ff8c6ca0cad2f6afcea8f635.png" alt="img" style="zoom: 67%;" />
 
 
 
-
+<br>
 
 ---
 
@@ -250,7 +250,7 @@ RNN 有多种结构,如下所示：
 
 
 
-
+<br>
 
 ---
 
@@ -299,7 +299,7 @@ nn.RNN(input_size, hidden_size, num_layers=1, nonlinearity=tanh, bias=True, batc
 - `dropout`是否应用dropout, 默认不使用，如若使用将其设置成一个0-1的数字即可
 - `birdirectional`是否使用双向的 rnn，默认是 False
 
-
+<br>
 
 ```python
 
@@ -361,7 +361,7 @@ out.shape = (10)
 output.shape = (32, 30)
 ```
 
-
+<br>
 
 ## RNN + embedding综合
 
@@ -424,15 +424,7 @@ for epoch in range(15):
     print(",Epoch {}/15 loss={:.3f}".format(epoch+1,loss.item()))
 ```
 
-
-
-
-
-
-
-
-
-
+<br><br>
 
 ---
 
@@ -444,15 +436,15 @@ for epoch in range(15):
 
 ## 总体框架
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70.png" alt="img" style="zoom: 67%;" />
+<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70.png" alt="img" style="zoom: 67%;" />
 
 ![img](D:\Programming code\markdown\notebook\语音基础\NLP\20190317220547737.png)
 
-
+<br>
 
 ## 结构分析
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678876133179-10.png" alt="img" style="zoom:67%;" />
+<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678876133179-10.png" alt="img" style="zoom:67%;" />
 
 
 
