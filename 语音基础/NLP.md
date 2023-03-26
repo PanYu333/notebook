@@ -436,15 +436,15 @@ for epoch in range(15):
 
 ## 总体框架
 
-<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70.png" alt="img" style="zoom: 67%;" />
+<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70.png" alt="img" style="zoom: 33%;" />
 
-![img](D:\Programming code\markdown\notebook\语音基础\NLP\20190317220547737.png)
+<img src=".\NLP\20190317220547737.png" alt="img" style="zoom: 67%;" />
 
 <br>
 
 ## 结构分析
 
-<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678876133179-10.png" alt="img" style="zoom:67%;" />
+<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678876133179-10.png" alt="img" style="zoom: 50%;" />
 
 
 
@@ -478,7 +478,7 @@ LSTM的门结构，是被设计出来的一些计算步骤，通过这些计算�
 
 <img src="D:\Programming code\markdown\notebook\语音基础\NLP\20190317220701125.png" alt="在这里插入图片描述" style="zoom:50%;" />
 
-![在这里插入图片描述](D:\Programming code\markdown\notebook\语音基础\NLP\20190317220646219.png)
+![在这里插入图片描述](.\NLP\20190317220646219.png)
 
 - 黄色图案代表神经元， 也就是$w^Tx+b$的操作， 区别在于激活函数不同，<font size=5>$\sigma$</font>代表`sigmoid`函数， $tanh$则是双曲线正切函数
 - 粉色图案代表元素操作，+就是对应元素相加，X是对应元素相乘
@@ -487,7 +487,7 @@ LSTM的门结构，是被设计出来的一些计算步骤，通过这些计算�
 
 ### 遗忘门
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678878195953-17.png" alt="在这里插入图片描述" style="zoom: 80%;" />
+<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678878195953-17.png" alt="在这里插入图片描述" style="zoom: 80%;" />
 
 *<font size=5>$\sigma$</font>*的输出在0到1之间，这个输出$f_t$逐位与$C_{t-1}$的元素相乘，我们可以发现，当$f_t$的某一位的值为0的时候，$C_{t-1}$对应那一位的信息就被干掉了，而值为(0, 1)，对应位的信息就保留了一部分，只有值为1的时候，对应的信息才会完整的保留。因此，这个操作被称之为遗忘门。
 
@@ -495,7 +495,7 @@ LSTM的门结构，是被设计出来的一些计算步骤，通过这些计算�
 
 ### 更新门层
 
-![在这里插入图片描述](D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678878575260-23.png)
+![在这里插入图片描述](.\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678878575260-23.png)
 
 
 
@@ -505,7 +505,7 @@ $C_t$：可以看作是新的输入带来的信息，$tanh$这个激活函数将
 
 <br>
 
-![在这里插入图片描述](D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678878598482-26.png)
+![在这里插入图片描述](.\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678878598482-26.png)
 
 遗忘门给出的$f_t*C_{t-1}$，表示过去的信息有选择的遗忘（保留）。右边也是同理.
 
@@ -517,7 +517,7 @@ $C_t$：可以看作是新的输入带来的信息，$tanh$这个激活函数将
 
 ### 输出门层
 
-![在这里插入图片描述](D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678879185001-29.png)
+![在这里插入图片描述](.\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpYW45OQ==,size_16,color_FFFFFF,t_70-1678879185001-29.png)
 
 此时细胞状态$C_t$已经被更新了，这里的$o_t$还是用了一个sigmoid函数，表示输出哪些内容，而$C_t$通过$tanh$缩放后与$o_t$相乘，这就是这一个timestep的输出了。
 
@@ -527,7 +527,7 @@ $C_t$：可以看作是新的输入带来的信息，$tanh$这个激活函数将
 $$
 f_t = \sigma(W_f\cdot [h_{t-1},x_t] + b_f)\tag {遗忘门}
 $$
-<br>
+
 $$
 i_t = \sigma(W_i\cdot [h_{t-1},x_t] + b_i)\tag {更新门1,2} \\
 \tilde{C_t} = tanh(W_c\cdot [h_{t-1},x_t] + b_c)
@@ -552,7 +552,7 @@ $$
 
 公式中：$W$有四个: $W_f,W_i,W_c,W_o$,  	$b$也是四个：$b_f,b_i,b_c,b_o$.......
 
-
+<br>
 
 ---
 
@@ -572,7 +572,7 @@ lstm = nn.LSTM(input_size, hidden_size, num_layers=1, bias=True, batch_first=Fal
 - `dropout`：默认值0，非零时，除最后一层，每一层的输出都进行dropout；
 - `bidirectional`：默认为 False。如果设置为 True, 则表示双向 LSTM，
 
-
+<br>
 
 ## nn.LSTM的输入输出格式
 
@@ -594,9 +594,7 @@ cn(num_layers * num_directions, batch, hidden_size)
 
 - **output[-1]与h_n是相等的，因为output[-1]包含的正是batch_size个句子中每一个句子的最后一个单词的隐藏状态，注意LSTM中的隐藏状态其实就是输出，cell state细胞状态才是LSTM中一直隐藏的，记录着信息**
 
-
-
-
+<br>
 
 ---
 
@@ -604,7 +602,7 @@ cn(num_layers * num_directions, batch, hidden_size)
 
 它将忘记门和输入门合成了一个单一的更新门。同样还混合了细胞状态和隐藏状态，和其他一些改动。最终的模型比标准的LSTM模型要简单，也是非常流行的变体。GRU 的张量运算较少，因此它比 LSTM 的训练更快一些。
 
-![](D:\Programming code\markdown\notebook\语音基础\NLP\d90834b68537f786b8d8c9fe656cf37c.png)
+![](.\NLP\d90834b68537f786b8d8c9fe656cf37c.png)
 
 
 
@@ -616,6 +614,7 @@ r_t = \sigma(W_{ir} x_t + b_{ir} + W_{hr} h_{(t-1)} + b_{hr}) \\
     h_t = (1 - z_t) * n_t + z_t * h_{(t-1)}
 $$
 
+<br>
 
 ## `nn.GRU`代码
 
@@ -649,7 +648,7 @@ $$
 
 [[论文1\]Cho et al., 2014 . Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation.](https://arxiv.org/abs/1406.1078)
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\image-20230315201306104.png" alt="image-20230315201306104" style="zoom:80%;" />
+<img src=".\NLP\image-20230315201306104.png" alt="image-20230315201306104" style="zoom:80%;" />
 
 论文1中指出，因为语义编码**C**包含了整个输入序列的信息，所以在解码的每一步都引入C。文中Ecoder-Decoder均是使用RNN，在计算每一时刻的输出yt时，都应该输入语义编码C，即$h_t = f(h_{t-1},y_{t-1},C),p(y_t) = f(h_t,y_{t-1},C)$。$h_t$为当前t时刻的隐藏层的值，$y_{t-1}$为上一时刻的预测输出，作为t时刻的输入，每一时刻的语义编码C都相同
 
@@ -657,7 +656,7 @@ $$
 
 [[论文2]Sutskever et al., 2014. Sequence to Sequence Learning with Neural Networks.](https://arxiv.org/abs/1409.3215)
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\image-20230315201956681.png" alt="image-20230315201956681" style="zoom:80%;" />
+<img src=".\NLP\image-20230315201956681.png" alt="image-20230315201956681" style="zoom:80%;" />
 
 论文2方式相对简单，只在Decoder的初始输入引入语义编码C，将C作为隐藏层状态值$h_0$的初始值，$p(y_t) = f(h_t,y_{t-1})$。
 
@@ -677,11 +676,11 @@ $$
 
 ## attention 原理
 
-![在这里插入图片描述](D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RpbmsxOTk1,size_16,color_FFFFFF,t_70-1678883558239-40.png)
+![](.\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RpbmsxOTk1,size_16,color_FFFFFF,t_70-1678883558239-40.png)
 
 上图引入了Attention 机制的`Encoder-Decoder`框架。不再只有一个单一的语义编码C，而是有多个C1,C2,C3这样的编码。当预测Y1时，可能Y1的注意力是放在C1上，那就用C1作为语义编码，当预测Y2时，Y2的注意力集中在C2上，那就用C2作为语义编码，以此类推，就模拟了人类的注意力机制。
 
-
+<br>
 
 ##  语义编码$C_i$的计算
 
@@ -706,7 +705,7 @@ $$
 
 
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RpbmsxOTk1,size_16,color_FFFFFF,t_70-1678935630253-43.png" alt="分布概率计算" style="zoom: 80%;" />
+<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RpbmsxOTk1,size_16,color_FFFFFF,t_70-1678935630253-43.png" alt="分布概率计算" style="zoom: 80%;" />
 
 decoder上一时刻的输出值$Y_{i-1}$与上一时刻传入的隐藏层的值$S_{i-1}$通过RNN生成$H_i$，然后**计算$H_i$与$h1，h2，h3…hm$的相关性**，得到相关性评分$F_i = F(h_j, H_i) = [f1,f2,f3…fm]$，然后对$F_i$进行softmax就得到注意力分配$α_{ij}$。然后将encoder的输出值$h_i$与对应的概率分布$a_{ij}$进行点乘求和，得到注意力attention值$C_i = \sum_{j=1}^{n} a_{ij}h_j$
 
@@ -723,7 +722,7 @@ decoder上一时刻的输出值$Y_{i-1}$与上一时刻传入的隐藏层的值$
 - 通过计算Q与K之间的相关性a，得出不同的K对输出的重要程度；
 - 再与对应的v进行相乘求和，就得到了Q的输出；
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RpbmsxOTk1,size_16,color_FFFFFF,t_70-1678937286404-46.png" alt="Attention机制" style="zoom:80%;" />
+<img src=".\NLP\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RpbmsxOTk1,size_16,color_FFFFFF,t_70-1678937286404-46.png" alt="Attention机制" style="zoom:80%;" />
 
 
 
@@ -741,7 +740,7 @@ $L_x$表示source的长度, 对应上例$L_x = 3$
 
 ## 总结
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\5cbcff99ded34619b6770ca11e5e2b8c.png" alt="详细" style="zoom: 50%;" />
+<img src=".\NLP\5cbcff99ded34619b6770ca11e5e2b8c.png" alt="详细" style="zoom: 50%;" />
 
 
 
@@ -772,7 +771,7 @@ $$
 
 [transformer解读2](https://jalammar.github.io/illustrated-transformer/)
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\v2-0c259fb2d439b98de27d877dcd3d1fcb_r.jpg" style="zoom:80%;" />
+<img src=".\NLP\v2-0c259fb2d439b98de27d877dcd3d1fcb_r.jpg" style="zoom:80%;" />
 
 <br>
 
@@ -780,7 +779,7 @@ $$
 
 翻译： 机器学习 -> machine learning
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\06f9885a2606e5ee31c8fd0f6ee13e24.jpeg" style="zoom:80%;" />
+<img src=".\NLP\06f9885a2606e5ee31c8fd0f6ee13e24.jpeg" style="zoom:80%;" />
 
 <br>
 
@@ -792,13 +791,13 @@ $$
 
 - **`encoders-decoders`**部分：
 
-![img](D:\Programming code\markdown\notebook\语音基础\NLP\1c983a9ac3629c13a2e7ac533af3d325.jpeg)
+![img](.\NLP\1c983a9ac3629c13a2e7ac533af3d325.jpeg)
 
 <br>
 
 - **`encoder`**里的结构是一个**自注意力机制**（实际上是多头自注意力机制	）加上一个**前馈神经网络**。
 
-![](D:\Programming code\markdown\notebook\语音基础\NLP\cab7ef0bf968af5e1ff203df1f927829-1678954720104-83.jpeg)
+![](.\NLP\cab7ef0bf968af5e1ff203df1f927829-1678954720104-83.jpeg)
 
 `self-attention`的输出矩阵$Z$的维度是（序列长度×D词向量），之后前馈神经网络的输出也是同样的维度
 
@@ -818,7 +817,7 @@ self-attention的输入就是词向量，即整个模型的最初的输入是词
 
 1. **求单词的$K,Q,V$**。对于输入X1(机器)，乘上三个矩阵后分别得到$Q1,K1,V1$，同样的，对于输入X2(学习)，也乘上三个不同的矩阵得到$Q2,K2,V2$。
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\99e844e4c95502a593a25df4d737757d.jpeg" alt="img" style="zoom: 67%;" />
+<img src=".\NLP\99e844e4c95502a593a25df4d737757d.jpeg" alt="img" style="zoom: 67%;" />
 
 <br>
 
@@ -830,7 +829,7 @@ self-attention的输入就是词向量，即整个模型的最初的输入是词
 
 3. 稳定梯度(可选)
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\df19b57b4b572468f31d2257d5dbfbef.jpeg" style="zoom:80%;" />
+<img src=".\NLP\df19b57b4b572468f31d2257d5dbfbef.jpeg" style="zoom:80%;" />
 
 <br>
 
@@ -869,7 +868,7 @@ $$
 
 - dim_v一般等于d，$d_v$为输出向量的维度
 
-
+<br>
 
 **`self_attention` 模型**：
 
@@ -945,13 +944,13 @@ model(torch.Tensor(50,5,3)).size() 		# (50, 5, 4)
 
 经过多头注意力机制后，就会得到多个权重矩阵Z，我们将多个Z进行拼接就得到了self-attention层的输出：
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\5e54bdbf0a672f669044cfeac0e0f954.png" style="zoom:80%;" />
+<img src=".\NLP\5e54bdbf0a672f669044cfeac0e0f954.png" style="zoom:80%;" />
 
 
 
 self-attention的输出即是前馈神经网络层的输入，然后前馈神经网络的输入只需要一个矩阵就可以了，不需要八个矩阵，因此我们需要把这8个矩阵压缩成一个,把这些**矩阵拼接起来然后用一个额外的权重矩阵与之相乘**即可。
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\720a574b977b21df5e3ee7cae4ce4a54.jpeg"  />
+<img src=".\NLP\720a574b977b21df5e3ee7cae4ce4a54.jpeg"  />
 
 
 
@@ -961,11 +960,9 @@ Z矩阵作为前馈神经网络的输入，矩阵的维度是（序列长度×D�
 
 **基本的Multihead Attention单元**：对于encoder来说就是利用这些基本单元叠加，其中key, query, value均来自前一层encoder的输出，即encoder的每个位置都可以注意到之前一层encoder的所有位置。
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\v2-3cd76d3e0d8a20d87dfa586b56cc1ad3_r.jpg" style="zoom: 67%;" />
+<img src=".\NLP\v2-3cd76d3e0d8a20d87dfa586b56cc1ad3_r.jpg" style="zoom: 67%;" />
 
 <br>
-
-
 
 ## MultiHead Attention代码
 
@@ -1087,7 +1084,7 @@ print(model(x).size())  		# torch.Size([2, 7, 512])
 
 对于decoder来讲，我们注意到有两个与encoder不同的地方，一个是第一级的Masked Multi-head，另一个是第二级的Multi-Head Attention不仅接受来自前一级的输出，还要接收encoder的输出。
 
-<img src="D:\Programming code\markdown\notebook\语音基础\NLP\v2-40cf3d31c1c0dca24872bd9fc1fc429f_r.jpg" style="zoom:67%;" />
+<img src=".\NLP\v2-40cf3d31c1c0dca24872bd9fc1fc429f_r.jpg" style="zoom:67%;" />
 
 第一级decoder的key, query, value均来自前一层decoder的输出，但加入了Mask操作，即我们只能attend到前面已经翻译过的输出的词语，因为翻译过程我们当前还并不知道下一个输出词语，这是我们之后才会推测到的。
 
